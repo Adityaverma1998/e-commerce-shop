@@ -4,7 +4,11 @@ import 'package:ecoomerce_shop/features/product/presentation/bloc/product_bloc.d
 
 mixin ProductStoreModule {
   static Future<void> configureProductStoreModuleInjection() async {
+    // Registering the ProductBloc with its dependency
     getIt.registerSingleton<ProductBloc>(
       ProductBloc(
-        getIt<GetProductUsecase>(),
-  }}
+        getProductUsecase: getIt<GetProductUsecase>(),
+      ),
+    );
+  }
+}

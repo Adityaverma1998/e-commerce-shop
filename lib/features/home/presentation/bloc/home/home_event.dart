@@ -16,3 +16,8 @@ class IncreaseCounterEvent extends HomeEvent{
   @override
   List<Object> get props => [];
 }
+
+class FetchNewsEvent extends HomeEvent {
+  @override
+  List<Object?> get props => [];
+}

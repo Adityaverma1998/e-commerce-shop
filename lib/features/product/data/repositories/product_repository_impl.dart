@@ -15,6 +15,7 @@ class ProductRepositoryImpl implements ProductRepository{
   Future<Either<NetworkException,List<Product>?>> getProducts() async{
     try{
       final result = await _productRemoteDataSource.getproducts();
+      print("data on product repository $result");
       return Right(result);
     } on DioException catch (e) {
       return Left(NetworkException.fromDioError(e));

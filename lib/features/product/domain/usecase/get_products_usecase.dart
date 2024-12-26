@@ -9,6 +9,7 @@ class GetProductUsecase  {
 
   GetProductUsecase(this._repository);
   Future<Either<NetworkException,List<Product>?>> getProducts() async{
-    return _repository.getProducts();
+
+    return  await _repository.getProducts();
   }
 }

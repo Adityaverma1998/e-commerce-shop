@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 class Product{
   final int id;
   final String title;
-  final  double price;
+  final  dynamic price;
   final String description;
   final String category;
   final String image;
@@ -13,6 +13,14 @@ class Product{
       // Convert JSON to Model
 
   factory Product.fromJson(Map<String,dynamic> json){
+   print("id type: ${json['id'].runtimeType}");
+  print("title type: ${json['title'].runtimeType}");
+  print("price type: ${json['price'].runtimeType}");
+  print("description type: ${json['description'].runtimeType}");
+  print("category type: ${json['category'].runtimeType}");
+  print("image type: ${json['image'].runtimeType}");
+
+
     return Product(
       id: json['id'],
       title: json['title'],

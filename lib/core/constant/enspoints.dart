@@ -2,7 +2,7 @@ class Endpoints{
 
   Endpoints._();
   // base url
-  static const String baseUrl = 'https://dummyjson.com';
+  static const String baseUrl = 'https://fakestoreapi.com';
 
   // receiveTimeout
   static const int receiveTimeout = 30000;

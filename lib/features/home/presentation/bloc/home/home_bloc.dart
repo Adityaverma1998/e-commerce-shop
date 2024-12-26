@@ -18,5 +18,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       final currentCounterValue = (state as LatestCounterValue).counter;
       emit(LatestCounterValue(counter: currentCounterValue - 1));
     });
+
+   
   }
+  
 }
