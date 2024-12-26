@@ -10,3 +10,9 @@ class LatestCounterValue extends HomeState{
      @override
      List<Object?> get props => [counter];
 }
+class FetchProductsEvent extends HomeState{
+  final List<dynamic> products;
+  FetchProductsEvent({required this.products});
+   @override
+     List<Object?> get props => [products];
+}
