@@ -3,6 +3,7 @@ import 'package:ecoomerce_shop/features/product/domain/entity/product.dart';
 import 'package:ecoomerce_shop/features/product/presentation/bloc/product_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ProductDetails extends StatefulWidget {
   final int productId;
@@ -59,8 +60,24 @@ class _ProductDetailsState extends State<ProductDetails> {
                 child: Image.network(product.image),),
 
                Expanded(child: Text(product.title)),
-               Expanded(child: Text(product.title)),
+               Expanded(child: Text(product.description)),
+                IconButton(onPressed: () async{
+                final link = await createProductLink(
+                  id: product.id,
+                  title: product.title,
+                );
+                await Share.share(link);
+                }, icon: Icon(Icons.share))
             ],
           );
    }
+
+   Future<String> createProductLink({
+    required int id,
+    required String title,
+  }) async {
+    // Call Rest API if link needs to be generated from backend.
+    return 'https://e-commerce-sembark.netlify.app/productDetails/$id';
+  }
+
 }
