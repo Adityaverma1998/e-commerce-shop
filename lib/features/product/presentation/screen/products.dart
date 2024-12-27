@@ -1,5 +1,6 @@
 import 'package:ecoomerce_shop/core/di/service_locator.dart';
 import 'package:ecoomerce_shop/features/product/presentation/bloc/product_bloc.dart';
+import 'package:ecoomerce_shop/features/product/presentation/widget/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,34 +32,38 @@ class _ProductScreenState extends State<ProductScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Products")),
-      body: BlocBuilder<ProductBloc, ProductState>(
-        builder: (context, state) {
-          if (state is ProductLoading) {
-            return const Center(child: CircularProgressIndicator());
-          } else if (state is ProductLoaded) {
-            // Display the list of products
-            return ListView.builder(
-              itemCount: state.products.length,
-              itemBuilder: (context, index) {
-                final product = state.products[index];
-                return ListTile(
-                  title: Text(product.title),
-                  subtitle: Text('\$${product.price.toString()}'),
-                  trailing: Text('Category: ${product.category}'),
-                );
-              },
-            );
-          } else if (state is ProductError) {
-            return Center(
-              child: Text('Error: ${state.message}'),
-            );
-          } else {
-            // Initial or unknown state
-            return const Center(
-              child: Text('No products available.'),
-            );
-          }
-        },
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: BlocBuilder<ProductBloc, ProductState>(
+          builder: (context, state) {
+            if (state is ProductLoading) {
+              return const Center(child: CircularProgressIndicator());
+            } else if (state is ProductLoaded) {
+              return GridView.builder(
+                itemCount: state.products.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+                mainAxisSpacing: 16.0,
+                crossAxisSpacing: 8.0
+                
+                ),
+                
+                itemBuilder: (context, index) {
+                  final product = state.products[index];
+                  return ProductCard(product: product);
+                },
+              );
+            } else if (state is ProductError) {
+              return Center(
+                child: Text('Error: ${state.message}'),
+              );
+            } else {
+              // Initial or unknown state
+              return const Center(
+                child: Text('No products available.'),
+              );
+            }
+          },
+        ),
       ),
     );
   }
