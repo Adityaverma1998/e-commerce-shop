@@ -13,12 +13,12 @@ class Product{
       // Convert JSON to Model
 
   factory Product.fromJson(Map<String,dynamic> json){
-   print("id type: ${json['id'].runtimeType}");
-  print("title type: ${json['title'].runtimeType}");
-  print("price type: ${json['price'].runtimeType}");
-  print("description type: ${json['description'].runtimeType}");
-  print("category type: ${json['category'].runtimeType}");
-  print("image type: ${json['image'].runtimeType}");
+  //  print("id type: ${json['id'].runtimeType}");
+  // print("title type: ${json['title'].runtimeType}");
+  // print("price type: ${json['price'].runtimeType}");
+  // print("description type: ${json['description'].runtimeType}");
+  // print("category type: ${json['category'].runtimeType}");
+  // print("image type: ${json['image'].runtimeType}");
 
 
     return Product(

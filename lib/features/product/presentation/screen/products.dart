@@ -19,7 +19,7 @@ class _ProductScreenState extends State<ProductScreen> {
   void initState() {
     super.initState();
     // Fetch products when the screen is initialized
-    _productBloc.add(FetchProducts(products: []));
+    _productBloc.add(FetchProducts());
   }
 
   @override

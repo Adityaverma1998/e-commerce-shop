@@ -6,7 +6,7 @@ import 'package:ecoomerce_shop/features/product/domain/repository/product_reposi
 import 'package:fpdart/fpdart.dart';
 
 class ProductRepositoryImpl implements ProductRepository{
-   final ProductRemoteDataSource  _productRemoteDataSource; 
+   final ProductRemoteDataSource   _productRemoteDataSource; 
 
    ProductRepositoryImpl(this._productRemoteDataSource);
 
@@ -14,8 +14,7 @@ class ProductRepositoryImpl implements ProductRepository{
   @override
   Future<Either<NetworkException,List<Product>?>> getProducts() async{
     try{
-      final result = await _productRemoteDataSource.getproducts();
-      print("data on product repository $result");
+      final result = await _productRemoteDataSource.getProducts();
       return Right(result);
     } on DioException catch (e) {
       return Left(NetworkException.fromDioError(e));
@@ -23,5 +22,17 @@ class ProductRepositoryImpl implements ProductRepository{
     
 
   }
+  @override
+
+  Future<Either<NetworkException,Product ?>> getProductDetails(int id) async{
+       try{
+      final result = await _productRemoteDataSource.getProductDetails(id);
+      print("data on product repository $result");
+      return Right(result);
+    } on DioException catch (e) {
+      return Left(NetworkException.fromDioError(e));
+    }
+    }
+
   
 }
