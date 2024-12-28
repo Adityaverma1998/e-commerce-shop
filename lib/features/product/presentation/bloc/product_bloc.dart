@@ -22,7 +22,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
     emit(ProductLoading());
 
     final result = await getProductUsecase.getProducts();
-       print('check resut are ${result}');
+       print('check resut are $result');
     result.fold(
       (failure) {
         // Handle failure case

@@ -22,11 +22,6 @@ class ProductRemoteDataSource {
 
               // Create a product from the JSON data
               final product = Product.fromJson(productData);
-
-              // If the product is null, log an error (though Product.fromJson should return a valid object)
-              if (product == null) {
-                print("Error: Product is null for data: $productData");
-              }
               return product;
             })
             .toList();
@@ -48,7 +43,7 @@ class ProductRemoteDataSource {
     try {
       final response = await _dioClient.get('${Endpoints.products}/$productId');
 
-      print("check product details response are ${response}");
+      print("check product details response are $response");
 
       if (response.data != null) {
         Product product = Product.fromJson(response.data);

@@ -1,6 +1,4 @@
 import 'package:ecoomerce_shop/features/product/domain/entity/product.dart';
-import 'package:ecoomerce_shop/features/product/presentation/screen/product_detail.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

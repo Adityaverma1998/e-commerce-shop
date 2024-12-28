@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   super.dispose();
 
     //Close the Stream Sink when the widget is disposed
-    _homeBlocSink?.close();
+    _homeBlocSink.close();
   }
 
   @override

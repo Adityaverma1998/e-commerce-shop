@@ -41,7 +41,7 @@ class _ProductScreenState extends State<ProductScreen> {
             } else if (state is ProductLoaded) {
               return GridView.builder(
                 itemCount: state.products.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
                 mainAxisSpacing: 16.0,
                 crossAxisSpacing: 8.0
                 

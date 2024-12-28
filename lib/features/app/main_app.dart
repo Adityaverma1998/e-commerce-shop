@@ -7,7 +7,7 @@ class MainApp extends StatelessWidget {
   // static final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> navigatorKey;
 
-  MainApp({required this.navigatorKey});
+  const MainApp({super.key, required this.navigatorKey});
   @override
   Widget build(BuildContext context) {
     // Initialize DynamicLinkHandler with navigatorKey

@@ -28,7 +28,7 @@ class _ProductDetailsState extends State<ProductDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Product Details "),
+        title: const Text("Product Details "),
       ),
       body: BlocConsumer<ProductBloc, ProductState>(
         listener: (context, state) {
@@ -54,7 +54,7 @@ class _ProductDetailsState extends State<ProductDetails> {
    Widget _buildProductDetailScreen(BuildContext context,Product product){
     return Column(
             children: <Widget>[
-              Container(
+              SizedBox(
                 height:300,
                 width: double.infinity,
                 child: Image.network(product.image),),
@@ -67,7 +67,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   title: product.title,
                 );
                 await Share.share(link);
-                }, icon: Icon(Icons.share))
+                }, icon: const Icon(Icons.share))
             ],
           );
    }

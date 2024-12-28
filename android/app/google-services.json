@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "643439224611",
+    "project_id": "pushnotifcation-bcf59",
+    "storage_bucket": "pushnotifcation-bcf59.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643439224611:android:160aefda9e5e395e170e96",
+        "android_client_info": {
+          "package_name": "com.example.ecoomerce_shop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpoB64KjZELRmJ8k142eBPB0Y-DzW1bs4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
