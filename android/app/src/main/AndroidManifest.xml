@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"  package="com.example.ecoomerce_shop">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:tools="http://schemas.android.com/tools"  package="com.example.ecoomerce_shop">
    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
@@ -11,7 +11,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:launchMode="singleTop"
+            android:launchMode="singleTask"
             android:taskAffinity=""
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -30,7 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
            <!-- Intent Filter for Dynamic Links -->
-           <intent-filter android:autoVerify="true">
+           <intent-filter android:autoVerify="true" tools:targetApi="m">
              <action android:name="android.intent.action.VIEW" />
               <category android:name="android.intent.category.DEFAULT" />
                <category android:name="android.intent.category.BROWSABLE" />
@@ -41,9 +41,9 @@
         </activity>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
-              <meta-data
+              <!-- <meta-data
                        android:name="com.google.firebase.messaging.default_notification_icon"
-                         android:resource="@drawable/your_icon_name"/>
+                         android:resource="@drawable/your_icon_name"/> -->
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
